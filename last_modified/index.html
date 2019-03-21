@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<body>
+  <article>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>남녀게시판 갤러리</h2>
+        <p>이번달의 모델 : 이하영</p>
+      </div>
+      <img class="d-block w-100 img-fluid" src="./img/model.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>사진게시 갤러리</h2>
+        <p>이번주 모델 : 카일</p>
+      </div>
+      <img class="d-block w-100 img-fluid" src="./img/carousel_kyle.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>남녀게시판 갤러리</h2>
+        <p>이번주 모델: 로완</p>
+      </div>
+      <img class="d-block w-100" src="./img/carousel_rowan.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="list-group">
+  <h5 id="best_head">베스트 추천 자료</h5>
+  <a id="more" class="col-8" href="#">자료 더보기...</a>
+  <ul class="list-unstyled">
+    <a href="#" class="list-group-item list-group-item-action">
+  <li class="media">
+    <img class="mr-3" src=".../64x64" alt="main_thumnails">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">List-based media object</h5>
+    </div>
+  </li>
+</a>
+
+    <a href="#" class="list-group-item list-group-item-action">
+  <li class="media my-4">
+    <img class="mr-3" src="./img/list.jpg" alt="main_thumnails">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">용산도서관 근황.jpg</h5>
+      <span>작성자: codie</span>
+    </div>
+  </li>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action">
+  <li class="media">
+    <img class="mr-3" src=".../64x64" alt="main_thumnails">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">실시간 이지은씨 인스타그램</h5>
+    </div>
+  </li>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action">
+  <li class="media">
+    <img class="mr-3" src=".../64x64" alt="main_thumnails">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">반도의 오뚜기 카레 중고거래.jpg</h5>
+    </div>
+  </li>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action">
+  <li class="media">
+    <img class="mr-3" src=".../64x64" alt="main_thumnails">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">여자 번호따기 가이드</h5>
+    </div>
+  </li>
+</a>
+</ul>
+</div>
+
+<!-- Alert -->
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>came some messages from Karen</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+  </article>
+
+  <!--메시지 모달 -->
+  <div class="modal fade" id="message_modal" tabindex="-1" role="dialog" aria-labelledby="modal_main" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal_main">채팅</h5>
+        <input type="text" class="search_bar" placeholder="채팅기록검색">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <a href="#chat_monitor" class="list-group-item list-group-item-action" data-toggle="collapse">
+        <div class="media">
+          <img id="user_photo" class="img-thumbnail" src="./img/list.jpg" alt="Generic placeholder image">
+          <div class="media-body">
+            <h5 class="mt-0" id="user_name">Olivia Hassen</h5>
+            <span class="badge badge-danger" id="info_span">1</span><p id="chat_content">Hi, baby It's me</p>
+            <span class="user_date">8월 15일</span>
+          </div>
+        </div>
+        </a>
+
+        <!--메시지 전송 모달 -->
+        <div class="collapse multi-collapse" id="chat_monitor">
+          <div class="outgoing_msg">
+              <div class="sent_msg">
+                  <p>Apollo University, Delhi, India Test</p>
+                  <span class="time_date"> 11:01 AM    |    Yesterday</span>
+              </div>
+          </div>
+          <div class="incoming_msg">
+            <div class="incoming_msg_img"> <img src="./img/list.jpg" alt="sunil"> </div>
+            <div class="received_msg">
+                <div class="received_withd_msg">
+                  <p>I love you so much</p>
+                  <span class="time_date"> 11:01 AM    |    yesterday</span>
+                </div>
+            </div>
+          </div>
+        <div class="outgoing_msg">
+            <div class="sent_msg">
+                <p>Apollo University, Delhi, India Test</p>
+                <span class="time_date"> 11:01 AM    |    Today</span>
+            </div>
+        </div>
+        <div class="incoming_msg">
+          <div class="incoming_msg_img"> <img src="./img/list.jpg" alt="sunil"> </div>
+          <div class="received_msg">
+              <div class="received_withd_msg">
+                  <p>We work directly with our designers and suppliers,
+                        and sell direct to you, which means quality, exclusive
+                      products, at a price anyone can afford.</p>
+                  <span class="time_date"> 11:01 AM    |    Today</span>
+              </div>
+          </div>
+        </div>
+          <div class="type_msg">
+            <div class="input_msg_write">
+              <input type="text" class="write_msg" placeholder="Type a message" />
+              <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 답글 알림 모달 -->
+<div class="modal fade" id="reply_modal" tabindex="-2" role="dialog" aria-labelledby="reply_modal_main" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reply_modal_main">답글 알림</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <a href="#board.html" class="list-group-item list-group-item-action" data-toggle="collapse">
+          <div class="media">
+            <img id="reply_thumnails" class="img-thumbnail" src="./img/list.jpg" alt="reply_modal_thumbnail">
+            <div class="media-body">
+              <h5 class="mt-0" id="article-name">이지은씨 인스타그램</h5>
+              <span class="badge badge-danger" id="info_span">1</span><p id="reply_content">Hi, baby It's me</p>
+              <span class="reply_date">8월 15일</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./js/index.js">
+  </script>
+</body>
