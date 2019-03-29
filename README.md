@@ -8,3 +8,5 @@ This is my school project
   <li>board</li>
   <li>Push_notice</li>
 </ul>
+
+reference site : (chat) https://www.webslesson.info/2018/07/live-chat-system-in-php-using-ajax-jquery.html
