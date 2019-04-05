@@ -1,81 +1,272 @@
-<?php
-function print_head() {
-  #head부분을 출력해주는 함수
-  echo <<<_HEAD_
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>오늘의 인기 자료</title>
-    <link rel="stylesheet" href="./css/index.css"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+<!-- refrence: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_social&stacked=h -->
 
-  </head>
-_HEAD_;
-
-}
-
-function print_header() {
-  #header부분을 출력해주는 함수
-  echo <<<_HTML_
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-  <a class="navbar-brand" href="index.html">커뮤니티</a>
-  <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>-->
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">추천 자료<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="waiting_list.html">대기 자료</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          창작 작품
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">소설</a>
-          <a class="dropdown-item" href="#">웹툰</a>
-          <!-- <div class="dropdown-divider"></div> -->
-          <a class="dropdown-item" href="#">그림</a>
-        </div>
-      </li>
-    </ul>
-    <button type="button" class="btn btn-primary btn_badge_m" data-toggle="modal" data-target="#message_modal">
-      메시지 <span class="badge badge-light">4</span>
-    </button>
-    <button type="button" class="btn btn-danger btn_badge_r" data-toggle="modal" data-target="#reply_modal">
-      답글 <span class="badge badge-light">4</span>
-    </button>
-    <div class="d-flex justify-content-end align-items-center" id="user">
-      <h6>안녕하세요. 이효인님</h6>
-    </div>
-    <div class="col-4 d-flex justify-content-end align-items-center">
-      <a id="sign_btn" class="btn btn-sm btn-outline-primary" href="signup.html">회원가입</a>
-      <a class="btn btn-sm btn-outline-secondary" href="login.html">로그인</a>
-    </div>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="자료 이름, 작성자" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색하기</button>
-    </form>
-  </div>
-  </nav>
-  </header>
-_HTML_;
-}
-?>
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="ko">
-<?php
-print_head();
-?>
+<head>
+  <title>커뮤니티</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
 <body>
-  <?php
-print_header();
-?>
+
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.php">커뮤니티</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">자료모음</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group input-group">
+          <input type="text" class="form-control" placeholder="Search..">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><button type="button" class="btn btn-primary btn_badge_m navbar-btn" data-toggle="modal" data-target="#message_modal" id="buttons">
+          메시지 <span class="badge badge-light">4</span>
+        </button></li>
+        <li><button type="button" class="btn btn-danger btn_badge_r navbar-btn" data-toggle="modal" data-target="#reply_modal" id="buttons">
+          답글 <span class="badge badge-light">4</span>
+        </button></li>
+        <li><a id="sign_btn" class="btn btn-sm btn-outline-primary" href="signup.php">회원가입</a></li>
+        <li><a class="btn btn-sm btn-outline-secondary" href="login.php">로그인</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 내 계정</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-3 well">
+      <div class="well">
+        <p><a href="#">My Profile</a></p>
+        <img src="/img/a.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+      </div>
+      <div class="well">
+        <p><a href="#">관심있는 것들</a></p>
+        <p>
+          <span class="label label-default">News</span>
+          <span class="label label-primary">W3Schools</span>
+          <span class="label label-success">Labels</span>
+          <span class="label label-info">Football</span>
+          <span class="label label-warning">Gaming</span>
+          <span class="label label-danger">Friends</span>
+        </p>
+      </div>
+      <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <p><strong>안녕!</strong></p>
+        사람들이 당신을 알아볼수 있게 만드세요!
+      </div>
+      <p><a href="#">Instagram</a></p>
+      <p><a href="#">Facebook</a></p>
+      <p><a href="#">Twitter</a></p>
+    </div>
+    <div class="col-sm-7">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default text-left">
+            <div class="panel-body">
+              <p contenteditable="true">기분 상태 : 좋음</p>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-thumbs-up"></span> Like
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>John</p>
+           <img src="/img/rowan.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Bo</p>
+           <img src="/img/a.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Jane</p>
+           <img src="/img/kyle.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Anja</p>
+           <img src="/img/a.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Just Forgot that I had to mention something about someone to someone about how I forgot something, but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2 well">
+      <div class="thumbnail">
+        <p>다가오는 행사 : </p>
+        <img src="/img/redlambo.jpg" alt="Paris" width="400" height="300">
+        <p><strong>Paris</strong></p>
+        <p>2015년 8월 21일</p>
+        <button class="btn btn-primary">Info</button>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 모달 추가-->
+
+<!--메시지 모달 -->
+<div class="modal fade" id="message_modal" tabindex="-1" role="dialog" aria-labelledby="modal_main" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="modal_main">채팅</h5>
+      <input type="text" class="search_bar" placeholder="채팅기록검색">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <a href="#chat_monitor" class="list-group-item list-group-item-action" data-toggle="collapse">
+      <div class="media">
+        <img id="user_photo" class="img-thumbnail" src="./img/list.jpg" alt="Generic placeholder image">
+        <div class="media-body">
+          <h5 class="mt-0" id="user_name">Olivia Hassen</h5>
+          <span class="badge badge-danger" id="info_span">1</span><p id="chat_content">Hi, baby It's me</p>
+          <span class="user_date">8월 15일</span>
+        </div>
+      </div>
+      </a>
+
+      <!--메시지 전송 모달 -->
+      <div class="collapse multi-collapse" id="chat_monitor">
+        <div class="outgoing_msg">
+            <div class="sent_msg">
+                <p>Apollo University, Delhi, India Test</p>
+                <span class="time_date"> 11:01 AM    |    Yesterday</span>
+            </div>
+        </div>
+        <div class="incoming_msg">
+          <div class="incoming_msg_img"> <img src="./img/list.jpg" alt="sunil"> </div>
+          <div class="received_msg">
+              <div class="received_withd_msg">
+                <p>I love you so much</p>
+                <span class="time_date"> 11:01 AM    |    yesterday</span>
+              </div>
+          </div>
+        </div>
+      <div class="outgoing_msg">
+          <div class="sent_msg">
+              <p>Apollo University, Delhi, India Test</p>
+              <span class="time_date"> 11:01 AM    |    Today</span>
+          </div>
+      </div>
+      <div class="incoming_msg">
+        <div class="incoming_msg_img"> <img src="./img/list.jpg" alt="sunil"> </div>
+        <div class="received_msg">
+            <div class="received_withd_msg">
+                <p>We work directly with our designers and suppliers,
+                      and sell direct to you, which means quality, exclusive
+                    products, at a price anyone can afford.</p>
+                <span class="time_date"> 11:01 AM    |    Today</span>
+            </div>
+        </div>
+      </div>
+        <div class="type_msg">
+          <div class="input_msg_write">
+            <input type="text" class="write_msg" placeholder="Type a message" />
+            <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 답글 알림 모달 -->
+<div class="modal fade" id="reply_modal" tabindex="-2" role="dialog" aria-labelledby="reply_modal_main" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="reply_modal_main">답글 알림</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <a href="#board.html" class="list-group-item list-group-item-action" data-toggle="collapse">
+        <div class="media">
+          <img id="reply_thumnails" class="img-thumbnail" src="./img/list.jpg" alt="reply_modal_thumbnail">
+          <div class="media-body">
+            <h5 class="mt-0" id="article-name">이지은씨 인스타그램</h5>
+            <span class="badge badge-danger" id="info_span">1</span><p id="reply_content">Hi, baby It's me</p>
+            <span class="reply_date">8월 15일</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+
+
 </body>
