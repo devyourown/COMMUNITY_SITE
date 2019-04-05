@@ -99,6 +99,11 @@
       </div>
 
       <div class="row">
+        <div class="well">
+        <label for="comment" style="float:left;">댓글:</label>
+        <textarea class="form-control" rows="3" id="comment"></textarea>
+        &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary navbar_btn" style="float:right;">달기</button>
+      </div>
         <div class="col-sm-3">
           <div class="well">
            <p>John</p>
