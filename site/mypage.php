@@ -43,7 +43,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li><button type="button" class="btn btn-primary btn_badge_m navbar-btn" data-toggle="modal" data-target="#message_modal" id="buttons">
           메시지 <span class="badge badge-light">4</span>
-        </button></li>
+        </button>
+        </li>
         <li><button type="button" class="btn btn-danger btn_badge_r navbar-btn" data-toggle="modal" data-target="#reply_modal" id="buttons">
           답글 <span class="badge badge-light">4</span>
         </button></li>
@@ -190,7 +191,7 @@
     <div class="modal-body">
       <a href="#chat_monitor" class="list-group-item list-group-item-action" data-toggle="collapse">
       <div class="media">
-        <img id="user_photo" class="img-thumbnail" src="./img/list.jpg" alt="Generic placeholder image">
+        <img id="user_photo" class="img-thumbnail" src="./img/rowan.jpg" alt="Generic placeholder image" width="50" height="50">
         <div class="media-body">
           <h5 class="mt-0" id="user_name">Olivia Hassen</h5>
           <span class="badge badge-danger" id="info_span">1</span><p id="chat_content">Hi, baby It's me</p>
@@ -208,7 +209,7 @@
             </div>
         </div>
         <div class="incoming_msg">
-          <div class="incoming_msg_img"> <img src="./img/list.jpg" alt="sunil"> </div>
+          <div class="incoming_msg_img"> <img src="./img/rowan.jpg" alt="sunil" class="img-circle" height="40" width="40"> </div>
           <div class="received_msg">
               <div class="received_withd_msg">
                 <p>I love you so much</p>
@@ -223,7 +224,7 @@
           </div>
       </div>
       <div class="incoming_msg">
-        <div class="incoming_msg_img"> <img src="./img/list.jpg" alt="sunil"> </div>
+        <div class="incoming_msg_img"> <img src="./img/rowan.jpg" alt="sunil" class="img-circle" height="40" width="40"> </div>
         <div class="received_msg">
             <div class="received_withd_msg">
                 <p>We work directly with our designers and suppliers,
@@ -260,7 +261,7 @@
     <div class="modal-body">
       <a href="#board.html" class="list-group-item list-group-item-action" data-toggle="collapse">
         <div class="media">
-          <img id="reply_thumnails" class="img-thumbnail" src="./img/list.jpg" alt="reply_modal_thumbnail">
+          <img id="reply_thumnails" class="img-thumbnail" src="./img/a.jpg" alt="reply_modal_thumbnail" width="50" height="50">
           <div class="media-body">
             <h5 class="mt-0" id="article-name">이지은씨 인스타그램</h5>
             <span class="badge badge-danger" id="info_span">1</span><p id="reply_content">Hi, baby It's me</p>

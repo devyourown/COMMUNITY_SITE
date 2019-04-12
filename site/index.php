@@ -4,7 +4,7 @@ date_default_timezone_set("Asia/Seoul");
 require("./database/call_database.php");
 ini_set('session.gc_maxlifetime', 600*12);
 session_start();
-$user = $_SESSION['id'];
+//$user = $_SESSION['id'];
 /*
 if(!isset($user)) { // 로그인 되어있지 않다면.
   unset($_SESSION['id']);
