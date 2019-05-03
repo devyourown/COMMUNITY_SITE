@@ -34,3 +34,21 @@ This will be changed file:
             <td>은정</td>
         </tbody>
       </table>
+      
+      스크립트 추가
+      <script>
+$(document).ready(function(){
+  fetch_user();
+
+  function fetch_user() {
+    $.ajax({
+      url:"fetch_user.php",
+      method:"POST",
+      success:function(data){
+        $('#user_details').html(data);
+      }
+    })
+  }
+})
+</script>
+      
